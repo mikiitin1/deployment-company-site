@@ -1,0 +1,10 @@
+{
+  "name": "deployment-company-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The Deployment Company — bilingual marketing site with a Supabase-backed contact form.",
+  "engines": {
+    "node": ">=18"
+  }
+}
