@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Use — The Deployment Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #0d0d10;
+    --ink-2: #3a3a40;
+    --ink-soft: #74747e;
+    --line: #ececef;
+    --grad-green: linear-gradient(135deg, #c8f1de 0%, #93dcd6 55%, #7fcfd6 100%);
+    --maxw: 1180px;
+    --prose: 760px;
+    --gut: clamp(22px, 5vw, 80px);
+    --ff-latin: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ff-heb: "Heebo", "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--ff-latin); font-size: 17px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  html[lang="he"] body { font-family: var(--ff-heb); }
+  .brand { font-family: var(--ff-latin) !important; direction: ltr; unicode-bidi: isolate; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gut); }
+  h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; }
+  p { margin: 0; text-wrap: pretty; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: saturate(180%) blur(18px);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand-mark { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+  .brand-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--grad-green); flex: none; }
+  .lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,0.6); }
+  .lang button { border: 0; background: transparent; color: var(--ink-soft); font-size: 13px; font-weight: 600; padding: 6px 13px; border-radius: 999px; line-height: 1; transition: color .2s ease, background .2s ease; }
+  .lang button.active { background: var(--ink); color: #fff; }
+  .lang button:not(.active):hover { color: var(--ink); }
+
+  /* Legal document */
+  .legal { padding: clamp(56px, 9vh, 104px) 0 clamp(64px, 10vh, 120px); }
+  .legal .prose { max-width: var(--prose); margin: 0 auto; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 18px; }
+  html[lang="he"] .eyebrow { letter-spacing: 0.06em; text-transform: none; }
+  .legal h1 { font-size: clamp(34px, 5.4vw, 56px); letter-spacing: -0.03em; }
+  .updated { margin-top: 16px; font-size: 14px; color: var(--ink-soft); }
+  .intro { margin-top: 28px; font-size: clamp(18px, 1.8vw, 20px); color: var(--ink-2); }
+  .legal section { margin-top: clamp(34px, 4.6vw, 48px); }
+  .legal h2 { font-size: clamp(20px, 2.4vw, 26px); letter-spacing: -0.02em; display: flex; gap: 12px; align-items: baseline; }
+  .legal h2 .n { font-size: 14px; font-weight: 600; color: var(--ink-soft); font-variant-numeric: tabular-nums; flex: none; }
+  .legal h2 + p, .legal p + p { margin-top: 14px; }
+  .legal section > p { margin-top: 16px; color: var(--ink-2); }
+  .legal ul { margin: 14px 0 0; padding-inline-start: 22px; color: var(--ink-2); }
+  .legal li { margin-top: 8px; }
+  .legal a.inline { color: var(--ink); border-bottom: 1px solid var(--line); }
+  .legal a.inline:hover { border-bottom-color: var(--ink); }
+  .disclaimer { margin-top: clamp(40px, 5vw, 56px); padding: 22px 24px; border: 1px solid var(--line); border-radius: 16px; background: #fbfbfc; color: var(--ink-soft); font-size: 14.5px; }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--line); padding: 44px 0; }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .footer-left { display: flex; align-items: center; gap: 14px; color: var(--ink-soft); font-size: 14px; }
+  .footer-right { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .footer-links { display: flex; gap: 26px; font-size: 14px; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .header-inner { height: 62px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand-mark brand" href="index.html" aria-label="The Deployment Company">
+        <span class="brand-dot"></span>
+        <span>The Deployment Company</span>
+      </a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en">EN</button>
+        <button data-lang="he">עב</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="wrap">
+      <div class="prose">
+        <p class="eyebrow" data-i18n="eyebrow"></p>
+        <h1 data-i18n="title"></h1>
+        <p class="updated" data-i18n="updated"></p>
+        <p class="intro" data-i18n="intro"></p>
+
+        <section>
+          <h2><span class="n">1</span><span data-i18n="s1_h"></span></h2>
+          <p data-i18n="s1_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">2</span><span data-i18n="s2_h"></span></h2>
+          <p data-i18n="s2_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">3</span><span data-i18n="s3_h"></span></h2>
+          <p data-i18n="s3_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">4</span><span data-i18n="s4_h"></span></h2>
+          <p data-i18n="s4_p"></p>
+          <ul>
+            <li data-i18n="s4_l1"></li>
+            <li data-i18n="s4_l2"></li>
+            <li data-i18n="s4_l3"></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><span class="n">5</span><span data-i18n="s5_h"></span></h2>
+          <p data-i18n="s5_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">6</span><span data-i18n="s6_h"></span></h2>
+          <p data-i18n="s6_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">7</span><span data-i18n="s7_h"></span></h2>
+          <p data-i18n="s7_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">8</span><span data-i18n="s8_h"></span></h2>
+          <p data-i18n="s8_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">9</span><span data-i18n="s9_h"></span></h2>
+          <p data-i18n="s9_p"></p>
+          <p><span data-i18n="s9_email_label"></span> <a class="inline" href="mailto:privacy@deployment.co.il">privacy@deployment.co.il</a></p>
+        </section>
+
+        <p class="disclaimer" data-i18n="disclaimer"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <span class="brand">© 2026 The Deployment Company</span>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home"></a>
+          <a href="terms.html" data-i18n="nav_terms"></a>
+          <a href="privacy.html" data-i18n="nav_privacy"></a>
+        </div>
+        <div class="lang" role="group" aria-label="Language">
+          <button data-lang="en">EN</button>
+          <button data-lang="he">עב</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      en: {
+        eyebrow: "Legal",
+        title: "Terms of Use",
+        updated: "Last updated: June 1, 2026",
+        intro: "These Terms of Use govern your access to and use of the website of The Deployment Company (“we”, “us”, “our”). By accessing or using this site, you agree to these terms. If you do not agree, please do not use the site.",
+
+        s1_h: "Use of the site",
+        s1_p: "You may use this site for lawful, informational purposes and to contact us about our services. You agree not to misuse the site, interfere with its normal operation, attempt to gain unauthorized access to it or its underlying systems, or use it in any way that violates applicable law.",
+
+        s2_h: "Intellectual property",
+        s2_p: "The content on this site — including text, design, graphics, and the “The Deployment Company” name and branding — is owned by us or our licensors and is protected by applicable intellectual-property laws. You may not copy, reproduce, or distribute it without our prior written permission, except for normal personal viewing of the site.",
+
+        s3_h: "Contacting us through the form",
+        s3_p: "When you submit the contact form, you are responsible for the information you provide and confirm that you are entitled to share it. Please do not submit confidential, sensitive, or third-party information that you are not authorized to disclose. We handle the information you submit as described in our Privacy Policy.",
+
+        s4_h: "Acceptable use",
+        s4_p: "When using this site, you agree not to:",
+        s4_l1: "Submit unlawful, infringing, defamatory, or harmful content;",
+        s4_l2: "Attempt to disrupt, overload, or compromise the security of the site or its infrastructure;",
+        s4_l3: "Use automated means to scrape or harvest content except as permitted by law.",
+
+        s5_h: "No professional advice",
+        s5_p: "Content on this site is provided for general information about our services and does not constitute professional, technical, legal, or other advice. Any engagement with us is governed by a separate written agreement.",
+
+        s6_h: "Disclaimer of warranties",
+        s6_p: "The site is provided “as is” and “as available”, without warranties of any kind, whether express or implied, including fitness for a particular purpose, accuracy, or uninterrupted availability. We do not warrant that the site will be error-free or continuously available.",
+
+        s7_h: "Limitation of liability",
+        s7_p: "To the fullest extent permitted by law, The Deployment Company will not be liable for any indirect, incidental, special, or consequential damages arising from your use of, or inability to use, this site. Nothing in these terms limits liability that cannot be limited under applicable law.",
+
+        s8_h: "Governing law",
+        s8_p: "These terms are governed by the laws of the State of Israel, without regard to conflict-of-law principles. The competent courts of Tel Aviv–Jaffa, Israel, will have exclusive jurisdiction over any dispute arising from or relating to these terms or the site.",
+
+        s9_h: "Changes and contact",
+        s9_p: "We may update these terms from time to time. The “last updated” date above reflects the most recent revision, and continued use of the site after changes constitutes acceptance of the revised terms. For any questions about these terms, contact us at:",
+        s9_email_label: "Email:",
+
+        disclaimer: "This document is a general template provided for convenience and is not legal advice. We recommend having it reviewed by a qualified lawyer before relying on it.",
+
+        nav_home: "Home",
+        nav_terms: "Terms of Use",
+        nav_privacy: "Privacy Policy"
+      },
+      he: {
+        eyebrow: "משפטי",
+        title: "תנאי שימוש",
+        updated: "עודכן לאחרונה: 1 ביוני 2026",
+        intro: "תנאי שימוש אלה חלים על הגישה שלכם לאתר של The Deployment Company (“אנחנו”, “שלנו”) והשימוש בו. בעצם הגישה לאתר או השימוש בו, אתם מסכימים לתנאים אלה. אם אינכם מסכימים, אנא הימנעו משימוש באתר.",
+
+        s1_h: "שימוש באתר",
+        s1_p: "מותר לכם להשתמש באתר זה למטרות חוקיות ומידעיות וכדי ליצור איתנו קשר בנוגע לשירותים שלנו. אתם מתחייבים שלא לעשות באתר שימוש לרעה, לא לשבש את פעולתו התקינה, לא לנסות לקבל גישה בלתי מורשית אליו או למערכות שבבסיסו, ולא להשתמש בו באופן המפר את הדין החל.",
+
+        s2_h: "קניין רוחני",
+        s2_p: "התוכן באתר — לרבות טקסט, עיצוב, גרפיקה, והשם והמיתוג “The Deployment Company” — הוא בבעלותנו או בבעלות מעניקי הרישיון שלנו ומוגן בדיני הקניין הרוחני החלים. אין להעתיק, לשכפל או להפיץ אותו ללא הסכמתנו מראש ובכתב, למעט צפייה אישית רגילה באתר.",
+
+        s3_h: "יצירת קשר דרך הטופס",
+        s3_p: "כאשר אתם שולחים את טופס יצירת הקשר, אתם אחראים למידע שאתם מספקים ומאשרים כי אתם רשאים לשתף אותו. אנא אל תשלחו מידע סודי, רגיש או מידע של צד שלישי שאינכם מורשים לחשוף. אנו מטפלים במידע שאתם שולחים כמתואר במדיניות הפרטיות שלנו.",
+
+        s4_h: "שימוש מותר",
+        s4_p: "בעת השימוש באתר, אתם מתחייבים שלא:",
+        s4_l1: "לשלוח תוכן בלתי חוקי, מפר זכויות, משמיץ או מזיק;",
+        s4_l2: "לנסות לשבש, להעמיס או לפגוע באבטחת האתר או בתשתית שלו;",
+        s4_l3: "להשתמש באמצעים אוטומטיים לאיסוף או גריפת תוכן, אלא כפי שמותר על פי דין.",
+
+        s5_h: "אין ייעוץ מקצועי",
+        s5_p: "התוכן באתר מסופק כמידע כללי על השירותים שלנו ואינו מהווה ייעוץ מקצועי, טכני, משפטי או אחר. כל התקשרות איתנו כפופה להסכם נפרד בכתב.",
+
+        s6_h: "הסרת אחריות לגבי אחריות",
+        s6_p: "האתר מסופק “כמות שהוא” (as is) ו“ככל שזמין”, ללא אחריות מכל סוג, מפורשת או משתמעת, לרבות התאמה למטרה מסוימת, דיוק או זמינות רציפה. איננו מתחייבים שהאתר יהיה נקי מתקלות או זמין באופן רציף.",
+
+        s7_h: "הגבלת אחריות",
+        s7_p: "במידה המרבית המותרת על פי דין, The Deployment Company לא תישא באחריות לכל נזק עקיף, מקרי, מיוחד או תוצאתי הנובע מהשימוש שלכם באתר או מאי-היכולת להשתמש בו. אין באמור כדי להגביל אחריות שלא ניתן להגבילה על פי הדין החל.",
+
+        s8_h: "הדין החל",
+        s8_p: "תנאים אלה כפופים לדיני מדינת ישראל, ללא התחשבות בכללי ברירת הדין. לבתי המשפט המוסמכים בתל אביב–יפו, ישראל, תהיה סמכות השיפוט הבלעדית בכל מחלוקת הנובעת מתנאים אלה או מהאתר או הקשורה אליהם.",
+
+        s9_h: "שינויים ויצירת קשר",
+        s9_p: "אנו עשויים לעדכן תנאים אלה מעת לעת. תאריך “עודכן לאחרונה” שלמעלה משקף את העדכון האחרון, והמשך השימוש באתר לאחר שינויים מהווה הסכמה לתנאים המעודכנים. לכל שאלה בנוגע לתנאים אלה, צרו איתנו קשר בכתובת:",
+        s9_email_label: "אימייל:",
+
+        disclaimer: "מסמך זה הוא תבנית כללית המסופקת לנוחות בלבד ואינו מהווה ייעוץ משפטי. מומלץ להעבירו לבדיקת עורך דין מוסמך לפני הסתמכות עליו.",
+
+        nav_home: "דף הבית",
+        nav_terms: "תנאי שימוש",
+        nav_privacy: "מדיניות פרטיות"
+      }
+    };
+
+    const htmlEl = document.documentElement;
+    function setLang(lang) {
+      const dict = I18N[lang] || I18N.en;
+      htmlEl.lang = lang;
+      htmlEl.dir = lang === "he" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] != null) el.textContent = dict[key];
+      });
+      document.querySelectorAll(".lang button").forEach(b => {
+        b.classList.toggle("active", b.dataset.lang === lang);
+      });
+      try { localStorage.setItem("tdc-lang", lang); } catch (e) {}
+    }
+    document.querySelectorAll(".lang button").forEach(btn => {
+      btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    });
+    let saved = "en";
+    try { saved = localStorage.getItem("tdc-lang") || "en"; } catch (e) {}
+    setLang(saved);
+  </script>
+</body>
+</html>

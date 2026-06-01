@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — The Deployment Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #0d0d10;
+    --ink-2: #3a3a40;
+    --ink-soft: #74747e;
+    --line: #ececef;
+    --grad-green: linear-gradient(135deg, #c8f1de 0%, #93dcd6 55%, #7fcfd6 100%);
+    --maxw: 1180px;
+    --prose: 760px;
+    --gut: clamp(22px, 5vw, 80px);
+    --ff-latin: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ff-heb: "Heebo", "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--ff-latin); font-size: 17px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  html[lang="he"] body { font-family: var(--ff-heb); }
+  .brand { font-family: var(--ff-latin) !important; direction: ltr; unicode-bidi: isolate; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--gut); }
+  h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; }
+  p { margin: 0; text-wrap: pretty; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: saturate(180%) blur(18px);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand-mark { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; }
+  .brand-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--grad-green); flex: none; }
+  .lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,0.6); }
+  .lang button { border: 0; background: transparent; color: var(--ink-soft); font-size: 13px; font-weight: 600; padding: 6px 13px; border-radius: 999px; line-height: 1; transition: color .2s ease, background .2s ease; }
+  .lang button.active { background: var(--ink); color: #fff; }
+  .lang button:not(.active):hover { color: var(--ink); }
+
+  /* Legal document */
+  .legal { padding: clamp(56px, 9vh, 104px) 0 clamp(64px, 10vh, 120px); }
+  .legal .prose { max-width: var(--prose); margin: 0 auto; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 18px; }
+  html[lang="he"] .eyebrow { letter-spacing: 0.06em; text-transform: none; }
+  .legal h1 { font-size: clamp(34px, 5.4vw, 56px); letter-spacing: -0.03em; }
+  .updated { margin-top: 16px; font-size: 14px; color: var(--ink-soft); }
+  .intro { margin-top: 28px; font-size: clamp(18px, 1.8vw, 20px); color: var(--ink-2); }
+  .legal section { margin-top: clamp(34px, 4.6vw, 48px); }
+  .legal h2 { font-size: clamp(20px, 2.4vw, 26px); letter-spacing: -0.02em; display: flex; gap: 12px; align-items: baseline; }
+  .legal h2 .n { font-size: 14px; font-weight: 600; color: var(--ink-soft); font-variant-numeric: tabular-nums; flex: none; }
+  .legal h2 + p, .legal p + p { margin-top: 14px; }
+  .legal section > p { margin-top: 16px; color: var(--ink-2); }
+  .legal ul { margin: 14px 0 0; padding-inline-start: 22px; color: var(--ink-2); }
+  .legal li { margin-top: 8px; }
+  .legal a.inline { color: var(--ink); border-bottom: 1px solid var(--line); }
+  .legal a.inline:hover { border-bottom-color: var(--ink); }
+  .disclaimer { margin-top: clamp(40px, 5vw, 56px); padding: 22px 24px; border: 1px solid var(--line); border-radius: 16px; background: #fbfbfc; color: var(--ink-soft); font-size: 14.5px; }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--line); padding: 44px 0; }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .footer-left { display: flex; align-items: center; gap: 14px; color: var(--ink-soft); font-size: 14px; }
+  .footer-right { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .footer-links { display: flex; gap: 26px; font-size: 14px; color: var(--ink-soft); }
+  .footer-links a:hover { color: var(--ink); }
+
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .header-inner { height: 62px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand-mark brand" href="index.html" aria-label="The Deployment Company">
+        <span class="brand-dot"></span>
+        <span>The Deployment Company</span>
+      </a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en">EN</button>
+        <button data-lang="he">עב</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="wrap">
+      <div class="prose">
+        <p class="eyebrow" data-i18n="eyebrow"></p>
+        <h1 data-i18n="title"></h1>
+        <p class="updated" data-i18n="updated"></p>
+        <p class="intro" data-i18n="intro"></p>
+
+        <section>
+          <h2><span class="n">1</span><span data-i18n="s1_h"></span></h2>
+          <p data-i18n="s1_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">2</span><span data-i18n="s2_h"></span></h2>
+          <p data-i18n="s2_p"></p>
+          <ul>
+            <li data-i18n="s2_l1"></li>
+            <li data-i18n="s2_l2"></li>
+            <li data-i18n="s2_l3"></li>
+            <li data-i18n="s2_l4"></li>
+          </ul>
+          <p data-i18n="s2_p2"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">3</span><span data-i18n="s3_h"></span></h2>
+          <p data-i18n="s3_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">4</span><span data-i18n="s4_h"></span></h2>
+          <p data-i18n="s4_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">5</span><span data-i18n="s5_h"></span></h2>
+          <p data-i18n="s5_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">6</span><span data-i18n="s6_h"></span></h2>
+          <p data-i18n="s6_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">7</span><span data-i18n="s7_h"></span></h2>
+          <p data-i18n="s7_p"></p>
+          <ul>
+            <li data-i18n="s7_l1"></li>
+            <li data-i18n="s7_l2"></li>
+            <li data-i18n="s7_l3"></li>
+            <li data-i18n="s7_l4"></li>
+          </ul>
+          <p><span data-i18n="s7_email_label"></span> <a class="inline" href="mailto:privacy@deployment.co.il">privacy@deployment.co.il</a></p>
+        </section>
+
+        <section>
+          <h2><span class="n">8</span><span data-i18n="s8_h"></span></h2>
+          <p data-i18n="s8_p"></p>
+        </section>
+
+        <section>
+          <h2><span class="n">9</span><span data-i18n="s9_h"></span></h2>
+          <p data-i18n="s9_p"></p>
+          <p><span data-i18n="s9_email_label"></span> <a class="inline" href="mailto:privacy@deployment.co.il">privacy@deployment.co.il</a></p>
+        </section>
+
+        <p class="disclaimer" data-i18n="disclaimer"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
+        <span class="brand">© 2026 The Deployment Company</span>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="index.html" data-i18n="nav_home"></a>
+          <a href="terms.html" data-i18n="nav_terms"></a>
+          <a href="privacy.html" data-i18n="nav_privacy"></a>
+        </div>
+        <div class="lang" role="group" aria-label="Language">
+          <button data-lang="en">EN</button>
+          <button data-lang="he">עב</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const I18N = {
+      en: {
+        eyebrow: "Legal",
+        title: "Privacy Policy",
+        updated: "Last updated: June 1, 2026",
+        intro: "This Privacy Policy explains how The Deployment Company (“we”, “us”, “our”) collects, uses, and protects personal information when you visit our website and contact us through it. We aim to collect only what we need and to be clear about how it is used.",
+
+        s1_h: "Who we are",
+        s1_p: "The Deployment Company is a forward-deployed AI engineering firm based in Israel. We are the controller of the personal information collected through this website. For privacy questions, you can reach us at the email address at the end of this policy.",
+
+        s2_h: "Information we collect",
+        s2_p: "We collect the information you choose to provide through our contact form, namely:",
+        s2_l1: "Your name;",
+        s2_l2: "Your email address;",
+        s2_l3: "Your company name (optional);",
+        s2_l4: "The content of your message.",
+        s2_p2: "We also store the language preference (English or Hebrew) you select, so the site can display in your chosen language. We do not use third-party advertising or analytics trackers, and we do not knowingly collect information from children.",
+
+        s3_h: "How we use your information",
+        s3_p: "We use the information you submit solely to respond to your inquiry, communicate with you about a potential engagement, and keep a record of our correspondence. We do not sell your personal information, and we do not use it for advertising.",
+
+        s4_h: "Legal basis for processing",
+        s4_p: "Where data protection laws such as the EU/UK GDPR apply, we process your contact-form information on the basis of your consent in submitting it and our legitimate interest in responding to and managing inquiries about our services. You can withdraw your consent at any time by contacting us.",
+
+        s5_h: "Cookies and local storage",
+        s5_p: "This site does not use tracking or advertising cookies. It stores a single preference in your browser’s local storage to remember your chosen language. This stays on your device, is not used to identify you, and can be cleared at any time through your browser settings.",
+
+        s6_h: "Where your information is stored",
+        s6_p: "Contact-form submissions are stored using Supabase, our database provider, on infrastructure located in the European Union. The website is hosted by Vercel. These providers act as processors on our behalf and are bound to protect the data. Your information may be processed in countries outside your own, subject to appropriate safeguards.",
+
+        s7_h: "Your rights",
+        s7_p: "Depending on where you live, you may have rights regarding your personal information, including the right to:",
+        s7_l1: "Access the information we hold about you;",
+        s7_l2: "Request correction of inaccurate information;",
+        s7_l3: "Request deletion of your information;",
+        s7_l4: "Object to or restrict certain processing.",
+        s7_email_label: "To exercise any of these rights, contact us at:",
+
+        s8_h: "Data retention and security",
+        s8_p: "We keep contact-form submissions only as long as needed to handle your inquiry and for a reasonable period afterward, then delete them on request or when no longer needed. We apply reasonable technical and organizational measures to protect your information; for example, the submissions database is configured so that the public website can add new messages but cannot read stored submissions.",
+
+        s9_h: "Changes and contact",
+        s9_p: "We may update this Privacy Policy from time to time. The “last updated” date above reflects the most recent revision. For any questions about this policy or your personal information, contact us at:",
+        s9_email_label: "Email:",
+
+        disclaimer: "This document is a general template provided for convenience and is not legal advice. We recommend having it reviewed by a qualified lawyer to ensure it reflects your actual data practices and legal obligations.",
+
+        nav_home: "Home",
+        nav_terms: "Terms of Use",
+        nav_privacy: "Privacy Policy"
+      },
+      he: {
+        eyebrow: "משפטי",
+        title: "מדיניות פרטיות",
+        updated: "עודכן לאחרונה: 1 ביוני 2026",
+        intro: "מדיניות פרטיות זו מסבירה כיצד The Deployment Company (“אנחנו”, “שלנו”) אוספת, משתמשת ומגינה על מידע אישי כאשר אתם מבקרים באתר שלנו ויוצרים איתנו קשר דרכו. אנו שואפים לאסוף רק את הנדרש ולהיות שקופים לגבי אופן השימוש בו.",
+
+        s1_h: "מי אנחנו",
+        s1_p: "The Deployment Company היא חברת הנדסת בינה מלאכותית פרוסה בשטח, מבוססת בישראל. אנו בעלי השליטה במידע האישי הנאסף דרך אתר זה. לשאלות בנושא פרטיות, ניתן לפנות אלינו בכתובת האימייל המופיעה בסוף מדיניות זו.",
+
+        s2_h: "מידע שאנו אוספים",
+        s2_p: "אנו אוספים את המידע שאתם בוחרים לספק דרך טופס יצירת הקשר, ובכלל זה:",
+        s2_l1: "שמכם;",
+        s2_l2: "כתובת האימייל שלכם;",
+        s2_l3: "שם החברה שלכם (לא חובה);",
+        s2_l4: "תוכן ההודעה שלכם.",
+        s2_p2: "כמו כן אנו שומרים את העדפת השפה (עברית או אנגלית) שבחרתם, כדי שהאתר יוצג בשפה הרצויה לכם. איננו עושים שימוש בכלי פרסום או ניתוח (אנליטיקס) של צד שלישי, ואיננו אוספים ביודעין מידע מילדים.",
+
+        s3_h: "כיצד אנו משתמשים במידע",
+        s3_p: "אנו משתמשים במידע שאתם שולחים אך ורק כדי להשיב לפנייתכם, לתקשר איתכם לגבי התקשרות אפשרית, ולשמור תיעוד של ההתכתבות בינינו. איננו מוכרים את המידע האישי שלכם ואיננו משתמשים בו לצורכי פרסום.",
+
+        s4_h: "הבסיס החוקי לעיבוד",
+        s4_p: "במקום שבו חלים דיני הגנת מידע כגון ה-GDPR האירופי/בריטי, אנו מעבדים את מידע טופס יצירת הקשר שלכם על בסיס הסכמתכם בעת שליחתו והאינטרס הלגיטימי שלנו להשיב ולנהל פניות בנוגע לשירותינו. תוכלו לחזור בכם מהסכמתכם בכל עת על ידי פנייה אלינו.",
+
+        s5_h: "עוגיות ואחסון מקומי",
+        s5_p: "אתר זה אינו משתמש בעוגיות מעקב או פרסום. הוא שומר העדפה אחת באחסון המקומי של הדפדפן שלכם כדי לזכור את שפת התצוגה שבחרתם. מידע זה נשאר במכשירכם, אינו משמש לזיהוי שלכם, וניתן למחוק אותו בכל עת דרך הגדרות הדפדפן.",
+
+        s6_h: "היכן המידע שלכם נשמר",
+        s6_p: "הודעות מטופס יצירת הקשר נשמרות באמצעות Supabase, ספק מסד הנתונים שלנו, על תשתית הממוקמת באיחוד האירופי. האתר מתארח אצל Vercel. ספקים אלה פועלים כמעבדי מידע מטעמנו ומחויבים להגן על המידע. ייתכן שהמידע שלכם יעובד במדינות מחוץ למדינתכם, בכפוף לאמצעי הגנה מתאימים.",
+
+        s7_h: "הזכויות שלכם",
+        s7_p: "בהתאם למקום מגוריכם, ייתכן שיש לכם זכויות לגבי המידע האישי שלכם, ובכלל זה הזכות:",
+        s7_l1: "לעיין במידע שאנו מחזיקים עליכם;",
+        s7_l2: "לבקש תיקון של מידע שגוי;",
+        s7_l3: "לבקש מחיקה של המידע שלכם;",
+        s7_l4: "להתנגד לעיבוד מסוים או להגביל אותו.",
+        s7_email_label: "למימוש כל אחת מזכויות אלה, צרו איתנו קשר בכתובת:",
+
+        s8_h: "שמירת מידע ואבטחה",
+        s8_p: "אנו שומרים הודעות מטופס יצירת הקשר רק לפרק הזמן הדרוש לטיפול בפנייתכם ולתקופה סבירה לאחר מכן, ולאחר מכן מוחקים אותן לפי בקשה או כאשר אין בהן עוד צורך. אנו נוקטים אמצעים טכניים וארגוניים סבירים להגנה על המידע; למשל, מסד נתוני ההודעות מוגדר כך שהאתר הציבורי יכול להוסיף הודעות חדשות אך אינו יכול לקרוא הודעות שמורות.",
+
+        s9_h: "שינויים ויצירת קשר",
+        s9_p: "אנו עשויים לעדכן מדיניות פרטיות זו מעת לעת. תאריך “עודכן לאחרונה” שלמעלה משקף את העדכון האחרון. לכל שאלה בנוגע למדיניות זו או למידע האישי שלכם, צרו איתנו קשר בכתובת:",
+        s9_email_label: "אימייל:",
+
+        disclaimer: "מסמך זה הוא תבנית כללית המסופקת לנוחות בלבד ואינו מהווה ייעוץ משפטי. מומלץ להעבירו לבדיקת עורך דין מוסמך כדי לוודא שהוא משקף את נוהלי המידע והחובות המשפטיות שלכם בפועל.",
+
+        nav_home: "דף הבית",
+        nav_terms: "תנאי שימוש",
+        nav_privacy: "מדיניות פרטיות"
+      }
+    };
+
+    const htmlEl = document.documentElement;
+    function setLang(lang) {
+      const dict = I18N[lang] || I18N.en;
+      htmlEl.lang = lang;
+      htmlEl.dir = lang === "he" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] != null) el.textContent = dict[key];
+      });
+      document.querySelectorAll(".lang button").forEach(b => {
+        b.classList.toggle("active", b.dataset.lang === lang);
+      });
+      try { localStorage.setItem("tdc-lang", lang); } catch (e) {}
+    }
+    document.querySelectorAll(".lang button").forEach(btn => {
+      btn.addEventListener("click", () => setLang(btn.dataset.lang));
+    });
+    let saved = "en";
+    try { saved = localStorage.getItem("tdc-lang") || "en"; } catch (e) {}
+    setLang(saved);
+  </script>
+</body>
+</html>
