@@ -800,7 +800,7 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    // form submit → /api/contact (Supabase-backed)
+    // form submit → posts directly to Supabase (insert-only anon key)
     const form = document.getElementById("contact-form");
     const note = document.getElementById("form-note");
     const noteText = note.querySelector("[data-i18n]");
