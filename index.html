@@ -764,6 +764,11 @@
 
     const htmlEl = document.documentElement;
 
+    // Supabase — the contact_submissions table has an insert-only RLS policy
+    // for the anon role, so this public key can add rows but cannot read them.
+    const SUPABASE_URL = "https://vcqorphrhfgrxmwdbvdl.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjcW9ycGhyaGZncnhtd2RidmRsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMDY1MjAsImV4cCI6MjA5NTg4MjUyMH0.CndRhQiY--nfcqfyp8Il2y4NhXeFkCsQJJGR_5ztnzk";
+
     function setLang(lang) {
       const dict = I18N[lang] || I18N.en;
       htmlEl.lang = lang;
@@ -818,10 +823,21 @@
       };
 
       try {
-        const res = await fetch("/api/contact", {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": SUPABASE_ANON_KEY,
+            "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify({
+            name: payload.name,
+            email: payload.email,
+            company: payload.company || null,
+            message: payload.message,
+            locale: payload.locale
+          })
         });
         if (!res.ok) throw new Error("Request failed: " + res.status);
         noteText.textContent = dict.sent;
