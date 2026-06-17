@@ -293,6 +293,46 @@
     max-width: 22ch;
   }
 
+  /* ---------- Capabilities ---------- */
+  .caps-head { max-width: 34ch; margin-bottom: clamp(40px, 6vw, 64px); }
+  .caps-head h2 { font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.025em; }
+  .caps-head p { margin-top: 20px; font-size: 19px; color: var(--ink-soft); }
+  .caps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .cap {
+    background: var(--bg);
+    padding: clamp(26px, 2.6vw, 38px);
+    display: flex; flex-direction: column; gap: 13px;
+    min-height: 210px;
+  }
+  .cap .swatch { width: 32px; height: 32px; border-radius: 9px; }
+  .cap:nth-child(3n+1) .swatch { background: var(--grad-green); }
+  .cap:nth-child(3n+2) .swatch { background: var(--grad-pink); }
+  .cap:nth-child(3n+3) .swatch { background: var(--grad-pink); }
+  .cap:nth-child(6n+4) .swatch,
+  .cap:nth-child(6n+6) .swatch { background: var(--grad-green); }
+  .cap h3 { font-size: clamp(18px, 1.7vw, 21px); font-weight: 600; letter-spacing: -0.015em; }
+  .cap p { font-size: 15.5px; color: var(--ink-2); line-height: 1.55; }
+
+  /* ---------- Industries ---------- */
+  .sectors-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom: clamp(32px,4vw,48px); flex-wrap: wrap; }
+  .sectors-head h2 { font-size: clamp(30px, 4vw, 46px); letter-spacing:-0.025em; max-width: 16ch; }
+  .sectors-head p { font-size: 18px; color: var(--ink-soft); max-width: 42ch; }
+  .sectors { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sector {
+    font-size: 15px; font-weight: 500;
+    padding: 11px 20px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--ink-2);
+    background: #fbfbfc;
+  }
+
   /* ---------- Case studies ---------- */
   .cases-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom: clamp(40px,5vw,60px); flex-wrap: wrap; }
   .cases-head h2 { font-size: clamp(30px, 4vw, 46px); letter-spacing:-0.025em; }
@@ -450,10 +490,12 @@
     .split { grid-template-columns: 1fr; }
     .orb { order: -1; max-width: 320px; }
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .caps { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 620px) {
     body { font-size: 16px; }
     .principles { grid-template-columns: 1fr; }
+    .caps { grid-template-columns: 1fr; }
     .cases { grid-template-columns: 1fr; }
     .field-row { grid-template-columns: 1fr; }
     .header-inner { height: 62px; }
@@ -510,6 +552,27 @@
 
     <hr class="divider" />
 
+    <!-- What we do -->
+    <section class="block">
+      <div class="wrap">
+        <div class="caps-head">
+          <p class="eyebrow" data-i18n="ey_caps"></p>
+          <h2 data-i18n="caps_h"></h2>
+          <p data-i18n="caps_intro"></p>
+        </div>
+        <div class="caps">
+          <div class="cap"><span class="swatch"></span><h3 data-i18n="cap1_h"></h3><p data-i18n="cap1_p"></p></div>
+          <div class="cap"><span class="swatch"></span><h3 data-i18n="cap2_h"></h3><p data-i18n="cap2_p"></p></div>
+          <div class="cap"><span class="swatch"></span><h3 data-i18n="cap3_h"></h3><p data-i18n="cap3_p"></p></div>
+          <div class="cap"><span class="swatch"></span><h3 data-i18n="cap4_h"></h3><p data-i18n="cap4_p"></p></div>
+          <div class="cap"><span class="swatch"></span><h3 data-i18n="cap5_h"></h3><p data-i18n="cap5_p"></p></div>
+          <div class="cap"><span class="swatch"></span><h3 data-i18n="cap6_h"></h3><p data-i18n="cap6_p"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
     <!-- 3 — How we work -->
     <section class="block">
       <div class="wrap">
@@ -539,6 +602,29 @@
             <span class="num">04</span>
             <h3 data-i18n="pr_4">מספקים ערך מוקדם, ואז משכללים ועולים ל Scale</h3>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Industries -->
+    <section class="block">
+      <div class="wrap">
+        <div class="sectors-head">
+          <div>
+            <p class="eyebrow" data-i18n="ey_sectors"></p>
+            <h2 data-i18n="sectors_h"></h2>
+          </div>
+          <p data-i18n="sectors_intro"></p>
+        </div>
+        <div class="sectors">
+          <span class="sector" data-i18n="sec_finance"></span>
+          <span class="sector" data-i18n="sec_insurance"></span>
+          <span class="sector" data-i18n="sec_health"></span>
+          <span class="sector" data-i18n="sec_mfg"></span>
+          <span class="sector" data-i18n="sec_realestate"></span>
+          <span class="sector" data-i18n="sec_retail"></span>
         </div>
       </div>
     </section>
@@ -674,6 +760,32 @@
         pr_3: "Work shoulder-to-shoulder with your domain experts",
         pr_4: "Deliver early value, then iterate toward scale",
 
+        ey_caps: "What we do",
+        caps_h: "Production AI, built into your stack",
+        caps_intro: "We deliver working AI systems inside your own environment — not slideware, and not a generic product you have to bend to fit. A few of the things we build:",
+        cap1_h: "AI inside your environment",
+        cap1_p: "We build and run systems where your data already lives — within your infrastructure, your security perimeter, and your compliance rules.",
+        cap2_h: "Agent orchestration",
+        cap2_p: "We coordinate multi-step AI agents with the guardrails, monitoring, and human checkpoints they need to run safely in production.",
+        cap3_h: "A knowledge layer",
+        cap3_p: "We turn scattered, messy enterprise data into structured, AI-ready context your models can actually reason over.",
+        cap4_h: "Connected to your stack",
+        cap4_p: "We integrate across the ERPs, CRMs, data warehouses, and legacy tools you already run — any cloud or on-prem, any model.",
+        cap5_h: "Reusable building blocks",
+        cap5_p: "Each engagement leaves behind modular components we reuse, so every next system ships faster than the last.",
+        cap6_h: "Governed and outcome-based",
+        cap6_p: "Auditable, traceable AI scoped around a result you can measure — a working solution on your data in days, not quarters.",
+
+        ey_sectors: "Industries",
+        sectors_h: "Built for data-heavy, regulated industries",
+        sectors_intro: "We focus on the operations where getting AI into production is hardest — unstructured data, cross-system workflows, and high-stakes decisions.",
+        sec_finance: "Financial services",
+        sec_insurance: "Insurance",
+        sec_health: "Healthcare",
+        sec_mfg: "Manufacturing",
+        sec_realestate: "Real estate",
+        sec_retail: "Retail",
+
         ey_cases: "Case studies",
         cases_h: "Work in the field",
         logo_ph: "Client",
@@ -725,6 +837,32 @@
         pr_2: "ממקסמים מהירות והשפעה בעולם האמיתי",
         pr_3: "עובדים כתף אל כתף עם מומחי התחום שלכם",
         pr_4: "מספקים ערך מוקדם, ואז משכללים לעבר קנה מידה",
+
+        ey_caps: "מה אנחנו עושים",
+        caps_h: "בינה מלאכותית בייצור, מוטמעת אצלכם",
+        caps_intro: "אנחנו מספקים מערכות בינה מלאכותית עובדות בתוך הסביבה שלכם — לא מצגות, ולא מוצר גנרי שתצטרכו לעקם כדי שיתאים. כמה מהדברים שאנחנו בונים:",
+        cap1_h: "בינה מלאכותית בתוך הסביבה שלכם",
+        cap1_p: "אנחנו בונים ומריצים מערכות במקום שבו הנתונים שלכם כבר נמצאים — בתוך התשתית, מתחם האבטחה וכללי הרגולציה שלכם.",
+        cap2_h: "תזמור סוכנים",
+        cap2_p: "אנחנו מתזמרים סוכני בינה מלאכותית רב-שלביים עם מעקות הבטיחות, הניטור ונקודות הבקרה האנושיות הנדרשים להרצה בטוחה בייצור.",
+        cap3_h: "שכבת ידע",
+        cap3_p: "אנחנו הופכים נתונים ארגוניים מפוזרים ולא מסודרים להקשר מובנה ומוכן לבינה מלאכותית שהמודלים יכולים באמת לפעול לפיו.",
+        cap4_h: "מחוברים למערכות שלכם",
+        cap4_p: "אנחנו משתלבים עם מערכות ה-ERP, ה-CRM, מחסני הנתונים והכלים הקיימים שלכם — בכל ענן או On-Prem, ועם כל מודל.",
+        cap5_h: "אבני בניין לשימוש חוזר",
+        cap5_p: "כל התקשרות משאירה אחריה רכיבים מודולריים שאנחנו משתמשים בהם שוב, כך שכל מערכת הבאה נבנית מהר יותר מקודמתה.",
+        cap6_h: "מבוקרים ומבוססי תוצאה",
+        cap6_p: "בינה מלאכותית הניתנת לביקורת ולמעקב, הממוקדת בתוצאה שניתן למדוד — פתרון עובד על הנתונים שלכם תוך ימים, לא רבעונים.",
+
+        ey_sectors: "תעשיות",
+        sectors_h: "נבנה לתעשיות עתירות נתונים ומוסדרות",
+        sectors_intro: "אנחנו מתמקדים בתהליכים שבהם הבאת בינה מלאכותית לייצור היא המאתגרת ביותר — נתונים לא מובנים, תהליכים חוצי-מערכות והחלטות בסיכון גבוה.",
+        sec_finance: "שירותים פיננסיים",
+        sec_insurance: "ביטוח",
+        sec_health: "בריאות",
+        sec_mfg: "תעשייה וייצור",
+        sec_realestate: "נדל\"ן",
+        sec_retail: "קמעונאות",
 
         ey_cases: "מקרי בוחן",
         cases_h: "עבודה בשטח",
